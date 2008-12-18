@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>org.nexwerk</groupId>
+    <artifactId>moola</artifactId>
+    <version>1.0.0</version>
+
+    <name>Moola</name>
+    <description>
+        Moola is another implementation of the money design
+        pattern.
+    </description>
+
+    <developers>
+        <developer>
+            <id>nuno</id>
+            <name>Nuno Marques</name>
+            <email>nuno@nexwerk.com</email>
+        </developer>
+        <developer>
+            <id>ecomba</id>
+            <name>Enrique Comba Riepenhausen</name>
+            <email>ecomba@nexwerk.com</email>
+        </developer>
+    </developers>
+
+    <licenses>
+        <license>
+            <name>The GNU Lesser General Public License (LGPLv3)</name>
+            <url>http://www.opensource.org/licenses/lgpl-3.0.html</url>
+        </license>
+    </licenses>
+</project>

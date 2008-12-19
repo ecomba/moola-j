@@ -7,17 +7,23 @@ import java.math.BigInteger;
  */
 public class Money implements Comparable {
     private final BigInteger amount;
+    private final Currency currency;
 
-    public Money(final double amount) {
+    public enum Currency { GBP, USD, EUR }
+
+    public Money(final double amount, final Currency currency) {
         this.amount = BigInteger.valueOf(Math.round(amount * 100));
+        this.currency = currency;
     }
 
-    public Money(final long amount) {
+    public Money(final long amount, final Currency currency) {
         this.amount = BigInteger.valueOf(amount * 100);
+        this.currency = currency;
     }
 
-    private Money(final BigInteger amount) {
+    private Money(final BigInteger amount, final Currency currency) {
         this.amount = amount;
+        this.currency = currency;
     }
 
     public double amount() {
@@ -25,15 +31,17 @@ public class Money implements Comparable {
     }
 
     public Money add(final Money addedMoney) {
-        return new Money(amount.add(addedMoney.amount));
+        assertSameCurrencyAs(addedMoney);
+        return new Money(amount.add(addedMoney.amount), currency);
     }
 
     public Money substract(final Money money) {
-        return new Money(amount.subtract(money.amount));
+        assertSameCurrencyAs(money);
+        return new Money(amount.subtract(money.amount), currency);
     }
 
     public Money multiply(final double denominator) {
-        return new Money(amount() * denominator);
+        return new Money(amount() * denominator, currency);
     }
 
     public Money[] divide(final int denominator) {
@@ -43,11 +51,16 @@ public class Money implements Comparable {
         BigInteger simpleResult = amount.divide(bigDenominator);
 
         for (int i = 0; i < denominator; i++) {
-            result[i] = new Money(simpleResult);
+            result[i] = new Money(simpleResult, currency);
         }
 
         return result;
     }
+
+    void assertSameCurrencyAs(Money money) {
+		if (!currency.equals(money.currency))
+            throw new AssertionError("Currency mismatch");
+	}
 
     public int compareTo(final Object comparedMoney) {
         Money money = (Money) comparedMoney;

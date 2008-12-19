@@ -14,16 +14,16 @@ public class MoneyTest {
                 2.0, new Money(2.0).amount(), DELTA);
     }
 
-    @Test public void amountInPennies() {
-        assertEquals("The amount should equal 2.0",
-                2.0, new Money(200).amount(), DELTA);
+    @Test public void amountAsLong() {
+        assertEquals("The amount should equal 200",
+                200, new Money(200).amount(), DELTA);
     }
 
     @Test public void add() {
         assertEquals("The amount should equal 9.0",
-                9.0,new Money(3.0).add(new Money(600)).amount(), DELTA);
+                603.0,new Money(3.0).add(new Money(600)).amount(), DELTA);
         assertEquals("The amount should equal 9.0",
-                9.0, new Money(300).add(new Money(6.00)).amount(), DELTA);
+                306.0, new Money(300).add(new Money(6.00)).amount(), DELTA);
     }
 
     @Test public void substract() {

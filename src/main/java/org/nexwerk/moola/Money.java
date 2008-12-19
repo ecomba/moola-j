@@ -12,11 +12,11 @@ public class Money {
         this.amount = BigInteger.valueOf(Math.round(amount * 100));
     }
 
-    public Money(final long amountInPennies) {
-        this.amount = BigInteger.valueOf(amountInPennies);
+    public Money(final long amount) {
+        this.amount = BigInteger.valueOf(amount * 100);
     }
 
-    public Money(final BigInteger amount) {
+    private Money(final BigInteger amount) {
         this.amount = amount;
     }
 

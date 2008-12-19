@@ -21,13 +21,20 @@ public class MoneyTest {
 
     @Test public void add() {
         assertEquals("The amount should equal 9.0",
-                603.0,new Money(3.0).add(new Money(600)).amount(), DELTA);
+                new Money(603.0) ,new Money(3.0).add(new Money(600)));
         assertEquals("The amount should equal 9.0",
-                306.0, new Money(300).add(new Money(6.00)).amount(), DELTA);
+                new Money(306.0), new Money(300).add(new Money(6.00)));
     }
 
     @Test public void substract() {
         assertEquals("THe amount should equal 0.9",
-                0.9, (new Money(2.0).substract(new Money(1.1))).amount(), DELTA);
+                new Money(0.9), new Money(2.0).substract(new Money(1.1)));
+    }
+
+    @Test public void multiply() {
+        assertEquals("The amount should equal 4.0",
+                new Money(4.0), new Money(2.0).multiply(2.0));
+        assertEquals("The amount should equal 36",
+                new Money(36), new Money(4.5).multiply(8));
     }
 }

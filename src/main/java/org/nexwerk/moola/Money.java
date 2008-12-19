@@ -5,7 +5,7 @@ import java.math.BigInteger;
 /**
  * @author Enrique Comba Riepenhausen
  */
-public class Money {
+public class Money implements Comparable {
     private final BigInteger amount;
 
     public Money(final double amount) {
@@ -30,5 +30,24 @@ public class Money {
 
     public Money substract(Money money) {
         return new Money(amount.subtract(money.amount));
+    }
+
+    public int compareTo(Object comparedMoney) {
+        Money money = (Money) comparedMoney;
+        return amount.compareTo(money.amount);
+    }
+
+    @Override public boolean equals(Object object) {
+		if (!(object instanceof Money)) return false;
+		Money other = (Money) object;
+		return amount.equals(other.amount);
+	}
+
+    @Override public int hashCode() {
+        return amount.hashCode(); 
+    }
+
+    public Money multiply(double denominator) {
+        return new Money(amount() * denominator);
     }
 }

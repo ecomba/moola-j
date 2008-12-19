@@ -64,4 +64,13 @@ public class MoneyTest {
             assertEquals("The amount should equal 4.5", new Money(4.5, Money.Currency.GBP), money);
         }
     }
+
+    @Test public void divideFurther() {
+        Money[] division = new Money(1, Money.Currency.GBP).divide(3);
+        
+        assertEquals("The amount should equal 0.4", new Money(0.34, Money.Currency.GBP), division[0]);
+        assertEquals("The amount should equal 0.4", new Money(0.33, Money.Currency.GBP), division[1]);
+        assertEquals("The amount should equal 0.4", new Money(0.33, Money.Currency.GBP), division[2]);
+
+    }
 }

@@ -54,10 +54,15 @@ public class Money {
             result[i] = new Money(simpleResult, currency);
         }
 
+        int remainder = amount.subtract(simpleResult.multiply(bigDenominator)).intValue();
+		for (int i=0; i < remainder; i++) {
+			result[i] = result[i].add(new Money(BigInteger.valueOf(1), currency));
+		}
+
         return result;
     }
 
-    void assertSameCurrencyAs(Money money) {
+    private void assertSameCurrencyAs(final Money money) {
 		if (!currency.equals(money.currency))
             throw new AssertionError("Currency mismatch");
 	}

@@ -27,4 +27,8 @@ public class Money {
     public Money add(final Money addedMoney) {
         return new Money(amount.add(addedMoney.amount));
     }
+
+    public Money substract(Money money) {
+        return new Money(amount.subtract(money.amount));
+    }
 }

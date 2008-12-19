@@ -8,15 +8,17 @@ import org.junit.Test;
  */
 public class MoneyTest {
     private static final double DELTA = 1e-8;
+    private static final double TWO = 2.0;
+    private static final int TWOHUNDRED = 200;
 
     @Test public void amount() {
         assertEquals("The amount should equal 2.0",
-                2.0, new Money(2.0).amount(), DELTA);
+                TWO, new Money(TWO).amount(), DELTA);
     }
 
     @Test public void amountAsLong() {
         assertEquals("The amount should equal 200",
-                200, new Money(200).amount(), DELTA);
+                TWOHUNDRED, new Money(TWOHUNDRED).amount(), DELTA);
     }
 
     @Test public void add() {
@@ -28,13 +30,20 @@ public class MoneyTest {
 
     @Test public void substract() {
         assertEquals("THe amount should equal 0.9",
-                new Money(0.9), new Money(2.0).substract(new Money(1.1)));
+                new Money(0.9), new Money(TWO).substract(new Money(1.1)));
     }
 
     @Test public void multiply() {
         assertEquals("The amount should equal 4.0",
-                new Money(4.0), new Money(2.0).multiply(2.0));
+                new Money(4.0), new Money(TWO).multiply(TWO));
         assertEquals("The amount should equal 36",
                 new Money(36), new Money(4.5).multiply(8));
+    }
+
+    @Test public void divide() {
+        Money[] division = new Money(36).divide(8);
+        for (Money money : division) {
+            assertEquals("The amount should equal 4.5", new Money(4.5), money);
+        }
     }
 }

@@ -28,26 +28,37 @@ public class Money implements Comparable {
         return new Money(amount.add(addedMoney.amount));
     }
 
-    public Money substract(Money money) {
+    public Money substract(final Money money) {
         return new Money(amount.subtract(money.amount));
     }
 
-    public int compareTo(Object comparedMoney) {
+    public Money multiply(final double denominator) {
+        return new Money(amount() * denominator);
+    }
+
+    public Money[] divide(final int denominator) {
+        BigInteger bigDenominator = BigInteger.valueOf(denominator);
+        Money[] result = new Money[denominator];
+
+        BigInteger simpleResult = amount.divide(bigDenominator);
+
+        for (int i = 0; i < denominator; i++) {
+            result[i] = new Money(simpleResult);
+        }
+
+        return result;
+    }
+
+    public int compareTo(final Object comparedMoney) {
         Money money = (Money) comparedMoney;
         return amount.compareTo(money.amount);
     }
 
-    @Override public boolean equals(Object object) {
-		if (!(object instanceof Money)) return false;
-		Money other = (Money) object;
-		return amount.equals(other.amount);
-	}
-
-    @Override public int hashCode() {
-        return amount.hashCode(); 
+    @Override public boolean equals(final Object object) {
+        return object instanceof Money && amount.equals(((Money) object).amount);
     }
 
-    public Money multiply(double denominator) {
-        return new Money(amount() * denominator);
+    @Override public int hashCode() {
+        return amount.hashCode();
     }
 }

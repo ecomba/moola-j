@@ -5,7 +5,7 @@ import java.math.BigInteger;
 /**
  * @author Enrique Comba Riepenhausen
  */
-public class Money implements Comparable {
+public class Money {
     private final BigInteger amount;
     private final Currency currency;
 
@@ -61,11 +61,6 @@ public class Money implements Comparable {
 		if (!currency.equals(money.currency))
             throw new AssertionError("Currency mismatch");
 	}
-
-    public int compareTo(final Object comparedMoney) {
-        Money money = (Money) comparedMoney;
-        return amount.compareTo(money.amount);
-    }
 
     @Override public boolean equals(final Object object) {
         return object instanceof Money && amount.equals(((Money) object).amount);

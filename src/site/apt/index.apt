@@ -5,3 +5,5 @@
 What is Moola
 
     Moola is an implementation of the Monet Design Pattern.
+
+    {{{http://martinfowler.com/ap2/quantity.html} Martin Fowler on Quantity}}

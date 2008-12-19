@@ -1,28 +1,48 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-
     <modelVersion>4.0.0</modelVersion>
+
     <groupId>org.nexwerk</groupId>
     <artifactId>moola</artifactId>
     <version>1.0.0</version>
+    <packaging>jar</packaging>
 
     <name>Moola</name>
+    <url>http://moola.nexwerk.org</url>
     <description>
         Moola is another implementation of the money design
         pattern.
     </description>
+
+    <organization>
+        <name>NexWerk</name>
+        <url>http://www.nexwerk.com</url>
+    </organization>
 
     <developers>
         <developer>
             <id>nuno</id>
             <name>Nuno Marques</name>
             <email>nuno@nexwerk.com</email>
+            <organization>NexWerk</organization>
+            <organizationUrl>http://www.nexwerk.com</organizationUrl>
+            <roles>
+                <role>developer</role>
+            </roles>
+            <timezone>0</timezone>
         </developer>
         <developer>
             <id>ecomba</id>
             <name>Enrique Comba Riepenhausen</name>
             <email>ecomba@nexwerk.com</email>
+            <organization>NexWerk</organization>
+            <organizationUrl>http://www.nexwerk.com</organizationUrl>
+            <roles>
+                <role>developer</role>
+            </roles>
+            <timezone>0</timezone>
         </developer>
     </developers>
 
@@ -32,4 +52,67 @@
             <url>http://www.opensource.org/licenses/lgpl-3.0.html</url>
         </license>
     </licenses>
+
+    <scm>
+        <connection>scm:svn:svn+ssh://nexwerk.org/srv/svn/nexwerk/moola</connection>
+        <tag>trunk</tag>
+    </scm>
+
+    <reporting>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-checkstyle-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                <version>2.5</version>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jxr-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-pmd-plugin</artifactId>
+                <version>2.4</version>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-report-plugin</artifactId>
+                <version>2.4.2</version>
+            </plugin>
+        </plugins>
+    </reporting>
+
+    <dependencies>
+        <!-- Testing dependencies -->
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.5</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>1.5</source>
+                    <target>1.5</target>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <configuration>
+                    <testFailureIgnore>true</testFailureIgnore>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 </project>

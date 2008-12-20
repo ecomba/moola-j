@@ -54,10 +54,17 @@
     </licenses>
 
     <scm>
-        <connection>scm:svn:svn+ssh://nexwerk.org/srv/svn/nexwerk/moola
-        </connection>
+        <connection>scm:svn:http://moola.nexwerk.org/svn</connection>
         <tag>trunk</tag>
+        <developerConnection>scm:svn:http://moola.nexwerk.org/svn</developerConnection>
     </scm>
+
+    <distributionManagement>
+        <site>
+            <id>moola.site</id>
+            <url>scp://moola.nexwerk.org/var/www/nexwerk.org/moola/</url>
+        </site>
+    </distributionManagement>
 
     <reporting>
         <plugins>

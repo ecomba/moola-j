@@ -3,21 +3,25 @@ package org.nexwerk.moola;
 import java.math.BigInteger;
 
 /**
+ * The money class represents the arithmetic that can be done when dealing with
+ * money.
+ *
+ * The money object is a inmutable value object.
+ * 
  * @author Enrique Comba Riepenhausen
  */
 public class Money {
     private final BigInteger amount;
     private final Currency currency;
-
-    public enum Currency { GBP, USD, EUR }
+    private final int FACTOR = 100;
 
     public Money(final double amount, final Currency currency) {
-        this.amount = BigInteger.valueOf(Math.round(amount * 100));
+        this.amount = BigInteger.valueOf(Math.round(amount * FACTOR));
         this.currency = currency;
     }
 
     public Money(final long amount, final Currency currency) {
-        this.amount = BigInteger.valueOf(amount * 100);
+        this.amount = BigInteger.valueOf(amount * FACTOR);
         this.currency = currency;
     }
 
@@ -27,7 +31,7 @@ public class Money {
     }
 
     public double amount() {
-        return amount.doubleValue() / 100;
+        return amount.doubleValue() / FACTOR;
     }
 
     public Money add(final Money addedMoney) {
@@ -55,7 +59,7 @@ public class Money {
         }
 
         int remainder = amount.subtract(simpleResult.multiply(bigDenominator)).intValue();
-		for (int i=0; i < remainder; i++) {
+		for (int i = 0; i < remainder; i++) {
 			result[i] = result[i].add(new Money(BigInteger.valueOf(1), currency));
 		}
 
@@ -63,9 +67,14 @@ public class Money {
     }
 
     private void assertSameCurrencyAs(final Money money) {
-		if (!currency.equals(money.currency))
+		if (!currency.equals(money.currency)) {
             throw new AssertionError("Currency mismatch");
+        }
 	}
+
+    @Override public String toString() {
+        return currency.getSymbol() + amount();
+    }
 
     @Override public boolean equals(final Object object) {
         return object instanceof Money && amount.equals(((Money) object).amount);

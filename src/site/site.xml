@@ -13,7 +13,7 @@
         <menu name="Moola">
             <item name="Introduction" href="index.html"/>
             <item name="Features" href="features.html"/>
-            <item name="Currencies" href="currencies.html"/>
+            <item name="Currencies Supported" href="currencies.html"/>
         </menu>
 
         <menu ref="reports"/>

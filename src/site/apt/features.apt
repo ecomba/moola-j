@@ -14,8 +14,11 @@ Moola Features
 
 * Currency Support
 
-    Moola supports all of the major currencies (as found on the
+    Moola supports 172 currencies (as found on the
     {{{http://www.xe.com/iso4217.php} ISO 4217 Currency Code List}}).
+
+    We have also added the generic currency with it's symbol for when the real
+    currency is not really important.
 
     Some of the currencies are fully supported by moola (i.e. the toString()
     method will print the correct symbol for a money object of a given

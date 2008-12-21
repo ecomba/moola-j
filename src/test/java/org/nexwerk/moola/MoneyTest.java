@@ -2,6 +2,8 @@ package org.nexwerk.moola;
 
 import static org.junit.Assert.assertEquals;
 import org.junit.Test;
+import static junit.framework.Assert.assertTrue;
+import static junit.framework.Assert.assertFalse;
 
 /**
  * @author Enrique Comba Riepenhausen
@@ -72,6 +74,15 @@ public class MoneyTest {
         assertEquals("The amount should equal 0.4", new Money(0.33, Currency.GBP), division[1]);
         assertEquals("The amount should equal 0.4", new Money(0.33, Currency.GBP), division[2]);
 
+    }
+
+    @Test public void equality() {
+        assertEquals("The money objects should be equal",
+                new Money(1, Currency.EUR), new Money(1, Currency.EUR));
+        assertEquals("The hashcodes should be the same",
+                new Money(1, Currency.EUR).hashCode(), new Money(1, Currency.EUR).hashCode());
+        assertFalse("The two objects should not equal",
+                new Money(1,Currency.EUR).equals(Currency.EUR));
     }
 
     @Test public void toStringImplementation() {

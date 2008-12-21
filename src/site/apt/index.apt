@@ -1,8 +1,55 @@
-    Welcome to the Moola Project, we hope you enjoy your time on this project site.
-    We've tried to assemble some developer documentation and information, and we're
-    really excited that you've taken the time to visit this site.
+Welcome to the Moola Project!
 
-    The project is still on the making and we are updating all the documentation
-    and polishing the code... so stay tuned!
+    Moola is a library for doing simple arithmetic calculations with money.
 
-    the NexWerk Team!
+
+* The Problem
+
+    Usually when we program we forget that it is not advisable to work with
+	<<<double>>> primitives as the precision of the calculations,
+	specially when dealing with money, can be really painful (and no one
+	wants to loose money, not even a penny, right?).
+
+	When doing calculations with money we often find code like this:
+
+---
+double prize = 5.00;
+---
+
+	<'What is wrong with this?'>, you may ask. Looking at it out of context there
+	is nothing wrong with the prize field, unless we want to do some calculations
+	with it.
+
+	Do you know what Java does when you run this on your machine (try it!)?
+
+---
+public class MoneyProblem {
+    public static void main(String[] args) {
+        System.out.println(2.00 - 1.10);
+    }
+}
+---
+
+    Running this code will produce the following:
+
+---
+ecomba-mbp:~ ecomba$ java MoneyProblem
+0.8999999999999999
+---
+
+    And we lost a penny... No big deal?
+
+    Working with money is a pesky thing, you need to make sure that the
+    calculations are correct to the penny, or else your customer will loose
+    money in the process.
+
+* The Solution
+
+    Moola gives a solution to this problem by abstracting calculations offering
+    a Money class.
+
+---
+Money result = new Money(2.00, Currency.GBP).substract(new Money(1.10, Currency.GBP));
+
+// result = 0.9 as expected!
+---

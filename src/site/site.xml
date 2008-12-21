@@ -12,6 +12,7 @@
 
         <menu name="Moola">
             <item name="Introduction" href="index.html"/>
+            <item name="Features" href="features.html"/>
         </menu>
 
         <menu ref="reports"/>

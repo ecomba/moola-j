@@ -91,4 +91,8 @@ public class MoneyTest {
         assertEquals("The system should display Û10", "Û10.0",
                 new Money(10.00, Currency.EUR).toString());
     }
+
+    @Test public void notFullySupportedCurrency() {
+        assertEquals("The symbol should display NGN", "NGN", Currency.NGN.getSymbol());
+    }
 }

@@ -1,0 +1,127 @@
+Moola Features
+    These are the features covered by moola so far:
+
+* Money Arithmetic
+
+    * Addition of two monies of the same currency
+
+    * Subtraction of a money object of the same currency
+
+    * Money multiplication! (Sadly it is only virtual)
+
+    * Money division
+
+* Currency Support
+
+    Moola supports all of the major currencies, here is a complete list of the
+    currently supported currencies:
+
+** Fully Supported currencies:
+
+    Fully supported currencies are those which will work even when printed to
+    a java.io.PrintStream with the toString() method call.
+
+    * AUD (Australian dollar)
+
+    * AWG (Aruban florin)
+
+    * BRL (Brazilian real)
+
+    * BYR (Belarusian ruble)
+
+    * BWP (Botswana pula)
+
+    * DKK (Danish krone)
+
+    * EUR (Euro)
+
+    * CHF (Swiss franc)
+
+    * CNY (Renminbi)
+
+    * GBP (Pound sterling)
+
+    * GTQ (Guatemalan quetzal)
+
+    * HKD (Hong Kong dollar)
+
+    * HUF (Hungarian forint)
+
+    * IDR (Indonesian rupiah)
+
+    * INR (Indian rupee)
+
+    * ISK (Icelandic kr—na)
+
+    * JPY (Japanese yen)
+
+    * KZT (Kazakhstani tenge)
+
+    * NOK (Norwegian krone)
+
+    * NZD (New Zealand dollar)
+
+    * RON (Romanian leu)
+
+    * SEK (Swedish krona)
+
+    * USD (United States Dollar)
+
+    * VEB (Venezuelan Bolivar)
+
+    * ZAR (South African rand)
+
+** Not Fully Supported currencies:
+
+    These currencies have either their symbol encoded as a UTF-8 string or
+    no symbol available at this time (as we might have not found the symbol
+    in the UTF-8 character map yet).
+
+    To make sure that the symbols are displayed correctly when using moola
+    make sure that you are encoding your PrintStreams with UTF-8!
+
+    If there is no symbol available the system will print the code instead.
+
+    * GENERIC (Generic currency symbol)
+
+    * CRC (Col—n Costarica)
+
+    * CZK (Czech koruna)
+
+    * GHS (Ghanaian cedi)
+
+    * ILS (Israeli new sheqel)
+
+    * IRR (Iranian rial)
+
+    * KHR (Cambodian riel)
+
+    * KPW (North Korean won)
+
+    * KRW (South Korean won)
+
+    * LAK (Lao kip)
+
+    * MNT (Mongolian tšgršg)
+
+    * NGN (Nigerian naira)
+
+    * PHP (Philippine peso)
+
+    * PKR (Pakistani rupee)
+
+    * PLN (Polish zloty)
+
+    * PYG (Paraguayan guaran’)
+
+    * RSD (Serbian dinar)
+
+    * RUB (Russian ruble)
+
+    * SVC (Col—n El Salvador)
+
+    * THB (Thai baht)
+
+    * UAH (Ukrainian hryvnia)
+
+    * VND (Vietnamese dong)

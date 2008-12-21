@@ -41,7 +41,7 @@ public enum Currency {
     NZD,        // New Zealand dollar
     PHP,        // Philippine peso
     PKR,        // Pakistani rupee
-    PLN,        // Polish z?oty
+    PLN,        // Polish zloty
     PYG,        // Paraguayan guaran’
     RON,        // Romanian leu
     RSD,        // Serbian dinar
@@ -52,7 +52,7 @@ public enum Currency {
     UAH,        // Ukrainian hryvnia
     USD,        // United States Dollar
     VEB,        // Venezuelan Bolivar
-    VND,        // Vietnamese ??ng
+    VND,        // Vietnamese dong
     ZAR;        // South African rand
 
 
@@ -60,29 +60,19 @@ public enum Currency {
 
     static {
         symbols = new HashMap<Currency, String>() {{
-            put(Currency.GENERIC, "?");
+            put(Currency.GENERIC, "\u00A4");
             put(Currency.GBP, "£");
             put(Currency.USD, "$");
             put(Currency.EUR, "Û");
-            put(Currency.THB, "?");
             put(Currency.VEB, "Bs.");
             put(Currency.BYR, "Br");
-            put(Currency.GHS, "?");
-            put(Currency.CRC, "?");
-            put(Currency.SVC, "?");
-            put(Currency.VND, "?");
             put(Currency.AWG, "Afl.");
             put(Currency.HUF, "Ft");
-            put(Currency.PKR, "?");
             put(Currency.INR, "Rs");
-            put(Currency.PYG, "?");
-            put(Currency.LAK, "?");
             put(Currency.DKK, "kr");
             put(Currency.NOK, "kr");
             put(Currency.SEK, "kr");
             put(Currency.ISK, "kr");
-            put(Currency.NGN, "?");
-            put(Currency.PHP, "?");
             put(Currency.BWP, "P");
             put(Currency.GTQ, "Q");
             put(Currency.ZAR, "R");
@@ -93,24 +83,17 @@ public enum Currency {
             put(Currency.NZD, "$");
             put(Currency.HKD, "$");
             put(Currency.KZT, "T");
-            put(Currency.MNT, "?");
-            put(Currency.KRW, "?");
-            put(Currency.KPW, "?");
             put(Currency.CNY, "´");
             put(Currency.JPY, "´");
-            put(Currency.PLN, "z?");
-            put(Currency.UAH, "?");
-            put(Currency.ILS, "?");
-            put(Currency.KHR, "?");
-            put(Currency.IRR, "?");
-            put(Currency.RUB, "???");
-            put(Currency.CZK, "K?");
             put(Currency.CHF, "Fr.");
-            put(Currency.RSD, "???");
         }};
     }
 
     public String getSymbol() {
-        return symbols.get(this);
+        if(symbols.containsKey(this)) {
+            return symbols.get(this);
+        } else {
+            return this.toString();
+        }
     }
 }

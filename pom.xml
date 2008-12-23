@@ -63,7 +63,7 @@
     <distributionManagement>
         <site>
             <id>moola.site</id>
-            <url>scp://moola.nexwerk.org/var/www/nexwerk.org/moola/</url>
+            <url>scp://moola.nexwerk.org/var/www/nexwerk.org/projects/moola/</url>
         </site>
     </distributionManagement>
 

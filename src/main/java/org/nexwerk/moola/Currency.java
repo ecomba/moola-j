@@ -150,7 +150,7 @@ public enum Currency {
     SOS,        //  Somalia, Shillings
     SPL,        //  Seborga, Luigini
     SRD,        //  Suriname, Dollars
-    STD,        //  S�o Tome and Principe, Dobras
+    STD,        //  Sao Tome and Principe, Dobras
     SVC,        //  El Salvador, Colones
     SYP,        //  Syria, Pounds
     SZL,        //  Swaziland, Emalangeni
@@ -174,14 +174,14 @@ public enum Currency {
     VND,        //  Viet Nam, Dong
     VUV,        //  Vanuatu, Vatu
     WST,        //  Samoa, Tala
-    XAF,        //  Communaut� Financi�re Africaine BEAC, Francs
+    XAF,        //  Communaut Financiare Africaine BEAC, Francs
     XAG,        //  Silver, Ounces
     XAU,        //  Gold, Ounces
     XCD,        //  East Caribbean Dollars
     XDR,        //  International Monetary Fund (IMF) Special Drawing Rights
-    XOF,        //  Communaut� Financi�re Africaine BCEAO, Francs
+    XOF,        //  Communaute Financiare Africaine BCEAO, Francs
     XPD,        //  Palladium Ounces
-    XPF,        //  Comptoirs Fran�ais du Pacifique Francs
+    XPF,        //  Comptoirs Francais du Pacifique Francs
     XPT,        //  Platinum, Ounces
     YER,        //  Yemen, Rials
     ZAR,        //  South Africa, Rand
@@ -189,98 +189,98 @@ public enum Currency {
     ZWD;        //  Zimbabwe, Zimbabwe Dollars
 
 
-    private static final Map<Currency, String> symbols;
-    private static final String dollarSymbol = "\u0024";
-    private static final String poundSymbol = "\u00a3";
+    private static final Map<Currency, String> SYMBOLS;
+    private static final String DOLLAR_SYMBOL = "\u0024";
+    private static final String POUND_SYMBOL = "\u00a3";
 
     static {
-        symbols = new HashMap<Currency, String>() {{
+        SYMBOLS = new HashMap<Currency, String>() {{
             put(Currency.GENERIC, "\u00a4");
-            put(Currency.AED, "");
-            put(Currency.AFN, "\u0402");
+            put(Currency.AED, "\u062f.\u0625");
+            put(Currency.AFN, "\u060b");
             put(Currency.ALL, "Lek");
-//            put(Currency.AMD, "");
-//            put(Currency.ANG, "");
-            put(Currency.AOA, "");
-            put(Currency.ARS, dollarSymbol);
-            put(Currency.AUD, dollarSymbol);
-//            put(Currency.AWG, "");
+            put(Currency.AMD, "\u0564\u0580.");
+            put(Currency.ANG, "\u0192");
+            put(Currency.AOA, "Kz");
+            put(Currency.ARS, DOLLAR_SYMBOL);
+            put(Currency.AUD, DOLLAR_SYMBOL);
+            put(Currency.AWG, "\u0192");
             put(Currency.AZN, "MaH");
             put(Currency.BAM, "KM");
-            put(Currency.BBD, dollarSymbol);
-//            put(Currency.BDT, "");
-//            put(Currency.BGN, "");
-//            put(Currency.BHD, "");
-//            put(Currency.BIF, "");
-            put(Currency.BMD, dollarSymbol);
-            put(Currency.BND, dollarSymbol);
-            put(Currency.BOB, dollarSymbol + "b");
-            put(Currency.BRL, "R" + dollarSymbol);
-            put(Currency.BSD, dollarSymbol);
-//            put(Currency.BTN, "");
+            put(Currency.BBD, DOLLAR_SYMBOL);
+            put(Currency.BDT, "\u09f3");
+            put(Currency.BGN, "\u043b\u0432");
+            put(Currency.BHD, "\u0628.\u062f");
+            put(Currency.BIF, "FBu");
+            put(Currency.BMD, DOLLAR_SYMBOL);
+            put(Currency.BND, DOLLAR_SYMBOL);
+            put(Currency.BOB, DOLLAR_SYMBOL + "b");
+            put(Currency.BRL, "R" + DOLLAR_SYMBOL);
+            put(Currency.BSD, DOLLAR_SYMBOL);
+            put(Currency.BTN, "Nu.");
             put(Currency.BWP, "P");
             put(Currency.BYR, "p.");
-            put(Currency.BZD, "BZ" + dollarSymbol);
-            put(Currency.CAD, dollarSymbol);
-//            put(Currency.CDF, "");
-            put(Currency.CHF, Currency.CHF.toString());
-            put(Currency.CLP, dollarSymbol);
-//            put(Currency.CNY, "");
-            put(Currency.COP, dollarSymbol);
-//            put(Currency.CRC, "");
-//            put(Currency.CUP, "");
-//            put(Currency.CVE, "");
-//            put(Currency.CYP, "");
-//            put(Currency.CZK, "");
-//            put(Currency.DJF, "");
+            put(Currency.BZD, "BZ" + DOLLAR_SYMBOL);
+            put(Currency.CAD, DOLLAR_SYMBOL);
+            put(Currency.CDF, "F");
+            put(Currency.CHF, "CHF");
+            put(Currency.CLP, DOLLAR_SYMBOL);
+            put(Currency.CNY, "\u5143");
+            put(Currency.COP, DOLLAR_SYMBOL);
+            put(Currency.CRC, "\u20a1");
+            put(Currency.CUP, DOLLAR_SYMBOL);
+            put(Currency.CVE, DOLLAR_SYMBOL);
+            put(Currency.CYP, POUND_SYMBOL);
+            put(Currency.CZK, "K\u010d");
+            put(Currency.DJF, "Fdj");
             put(Currency.DKK, "kr");
-            put(Currency.DOP, "RD" + dollarSymbol);
-//            put(Currency.DZD, "");
+            put(Currency.DOP, "RD" + DOLLAR_SYMBOL);
+            put(Currency.DZD, "\u062f\u062c");
             put(Currency.EEK, "kr");
-            put(Currency.EGP, poundSymbol);
-//            put(Currency.ERN, "");
-//            put(Currency.ETB, "");
+            put(Currency.EGP, POUND_SYMBOL);
+            put(Currency.ERN, "Nfk");
+            put(Currency.ETB, "Br");
             put(Currency.EUR, "\u20ac");
-            put(Currency.FJD, dollarSymbol);
-            put(Currency.FKP, poundSymbol);
-            put(Currency.GBP, poundSymbol);
-//            put(Currency.GEL, "");
-            put(Currency.GGP, poundSymbol);
-//            put(Currency.GHS, "");
-            put(Currency.GIP, poundSymbol);
-//            put(Currency.GMD, "");
-//            put(Currency.GNF, "");
+            put(Currency.FJD, DOLLAR_SYMBOL);
+            put(Currency.FKP, POUND_SYMBOL);
+            put(Currency.GBP, POUND_SYMBOL);
+            put(Currency.GEL, "\u10e6");
+            put(Currency.GGP, POUND_SYMBOL);
+            put(Currency.GHS, "\u20b5");
+            put(Currency.GIP, POUND_SYMBOL);
+            put(Currency.GMD, "D");
+            put(Currency.GNF, "FG");
             put(Currency.GTQ, "Q");
-            put(Currency.GYD, dollarSymbol);
-            put(Currency.HKD, "HK" + dollarSymbol);
+            put(Currency.GYD, DOLLAR_SYMBOL);
+            put(Currency.HKD, "HK" + DOLLAR_SYMBOL);
             put(Currency.HNL, "L");
             put(Currency.HRK, "kn");
-//            put(Currency.HTG, "");
+            put(Currency.HTG, "G");
             put(Currency.HUF, "Ft");
             put(Currency.IDR, "Rp");
-//            put(Currency.ILS, "");
-            put(Currency.IMP, poundSymbol);
-//            put(Currency.INR, "");
-//            put(Currency.IQD, "");
-//            put(Currency.IRR, "");
+            put(Currency.ILS, "\u20aa");
+            put(Currency.IMP, POUND_SYMBOL);
+            put(Currency.INR, "\u20a8");
+            put(Currency.IQD, "\u0639.\u062f");
+            put(Currency.IRR, "\ufdfc");
             put(Currency.ISK, "kr");
-            put(Currency.JEP, dollarSymbol);
-            put(Currency.JMD, "J" + dollarSymbol);
-//            put(Currency.JOD, "");
+            put(Currency.JEP, DOLLAR_SYMBOL);
+            put(Currency.JMD, "J" + DOLLAR_SYMBOL);
+            put(Currency.JOD, "\u062f.\u0627");
             put(Currency.JPY, "\u00a5");
-//            put(Currency.KES, "");
-//            put(Currency.KGS, "");
-//            put(Currency.KHR, "");
-//            put(Currency.KMF, "");
-//            put(Currency.KPW, "");
+            put(Currency.KES, "KSh");
+            put(Currency.KGS, "\u043b\u0432");
+            put(Currency.KHR, "\u17db");
+            put(Currency.KMF, "CF");
+            put(Currency.KPW, "");
 //            put(Currency.KRW, "");
 //            put(Currency.KWD, "");
-            put(Currency.KYD, dollarSymbol);
+            put(Currency.KYD, DOLLAR_SYMBOL);
 //            put(Currency.KZT, "");
 //            put(Currency.LAK, "");
-            put(Currency.LBP, poundSymbol);
+            put(Currency.LBP, POUND_SYMBOL);
 //            put(Currency.LKR, "");
-            put(Currency.LRD, dollarSymbol);
+            put(Currency.LRD, DOLLAR_SYMBOL);
             put(Currency.LSL, "");
 //            put(Currency.LTL, "Lt");
             put(Currency.LVL, "Ls");
@@ -297,15 +297,15 @@ public enum Currency {
 //            put(Currency.MUR, "");
 //            put(Currency.MVR, "");
 //            put(Currency.MWK, "");
-            put(Currency.MXN, dollarSymbol);
+            put(Currency.MXN, DOLLAR_SYMBOL);
             put(Currency.MYR, "RM");
             put(Currency.MZN, "MT");
-            put(Currency.NAD, dollarSymbol);
+            put(Currency.NAD, DOLLAR_SYMBOL);
 //            put(Currency.NGN, "");
-            put(Currency.NIO, "C" + dollarSymbol);
+            put(Currency.NIO, "C" + DOLLAR_SYMBOL);
             put(Currency.NOK, "kr");
 //            put(Currency.NPR, "");
-            put(Currency.NZD, dollarSymbol);
+            put(Currency.NZD, DOLLAR_SYMBOL);
 //            put(Currency.OMR, "");
             put(Currency.PAB, "B/.");
             put(Currency.PEN, "S/.");
@@ -320,20 +320,20 @@ public enum Currency {
 //            put(Currency.RUB, "");
 //            put(Currency.RWF, "");
 //            put(Currency.SAR, "");
-            put(Currency.SBD, dollarSymbol);
+            put(Currency.SBD, DOLLAR_SYMBOL);
 //            put(Currency.SCR, "");
 //            put(Currency.SDG, "");
             put(Currency.SEK, "kr");
-            put(Currency.SGD, dollarSymbol);
-            put(Currency.SHP, poundSymbol);
+            put(Currency.SGD, DOLLAR_SYMBOL);
+            put(Currency.SHP, POUND_SYMBOL);
 //            put(Currency.SKK, "");
 //            put(Currency.SLL, "");
             put(Currency.SOS, "S");
 //            put(Currency.SPL, "");
-            put(Currency.SRD, dollarSymbol);
+            put(Currency.SRD, DOLLAR_SYMBOL);
 //            put(Currency.STD, "");
-            put(Currency.SVC, dollarSymbol);
-            put(Currency.SYP, poundSymbol);
+            put(Currency.SVC, DOLLAR_SYMBOL);
+            put(Currency.SYP, POUND_SYMBOL);
 //            put(Currency.SZL, "");
 //            put(Currency.THB, "");
 //            put(Currency.TJS, "");
@@ -341,14 +341,14 @@ public enum Currency {
 //            put(Currency.TND, "");
 //            put(Currency.TOP, "");
             put(Currency.TRY, "YTL");
-            put(Currency.TTD, "TT" + dollarSymbol);
-            put(Currency.TVD, dollarSymbol);
+            put(Currency.TTD, "TT" + DOLLAR_SYMBOL);
+            put(Currency.TVD, DOLLAR_SYMBOL);
 //            put(Currency.TWD, "");
 //            put(Currency.TZS, "");
 //            put(Currency.UAH, "");
 //            put(Currency.UGX, "");
-            put(Currency.USD, dollarSymbol);
-            put(Currency.UYU, dollarSymbol + "U");
+            put(Currency.USD, DOLLAR_SYMBOL);
+            put(Currency.UYU, DOLLAR_SYMBOL + "U");
 //            put(Currency.UZS, "");
 //            put(Currency.VEB, "");
             put(Currency.VEF, "Bs");
@@ -358,7 +358,7 @@ public enum Currency {
 //            put(Currency.XAF, "");
 //            put(Currency.XAG, "");
 //            put(Currency.XAU, "");
-            put(Currency.XCD, dollarSymbol);
+            put(Currency.XCD, DOLLAR_SYMBOL);
 //            put(Currency.XDR, "");
 //            put(Currency.XOF, "");
 //            put(Currency.XPD, "");
@@ -367,13 +367,13 @@ public enum Currency {
 //            put(Currency.YER, "");
             put(Currency.ZAR, "R");
 //            put(Currency.ZMK, "");
-            put(Currency.ZWD, "Z" + dollarSymbol);
+            put(Currency.ZWD, "Z" + DOLLAR_SYMBOL);
         }};
     }
 
     public String getSymbol() {
-        if(symbols.containsKey(this)) {
-            return new String(symbols.get(this).getBytes());
+        if(SYMBOLS.containsKey(this)) {
+            return new String(SYMBOLS.get(this).getBytes());
         } else {
             return this.toString();
         }

@@ -2,7 +2,6 @@ package org.nexwerk.moola;
 
 import java.util.Map;
 import java.util.HashMap;
-import java.io.UnsupportedEncodingException;
 
 /**
  * This enumeration represents the available currencies in moola.
@@ -11,7 +10,7 @@ import java.io.UnsupportedEncodingException;
  * of these converted to UTF-8 so that they can be displayed nicely when
  * printing (either to the console or when generating documents, etc). For a
  * complete list of this symbols refer to http://www.xe.com/symbols.php
- * 
+ *
  * @author Enrique Comba Riepenhausen
 */
 public enum Currency {
@@ -151,7 +150,7 @@ public enum Currency {
     SOS,        //  Somalia, Shillings
     SPL,        //  Seborga, Luigini
     SRD,        //  Suriname, Dollars
-    STD,        //  São Tome and Principe, Dobras
+    STD,        //  SÔøΩo Tome and Principe, Dobras
     SVC,        //  El Salvador, Colones
     SYP,        //  Syria, Pounds
     SZL,        //  Swaziland, Emalangeni
@@ -175,14 +174,14 @@ public enum Currency {
     VND,        //  Viet Nam, Dong
     VUV,        //  Vanuatu, Vatu
     WST,        //  Samoa, Tala
-    XAF,        //  Communauté Financière Africaine BEAC, Francs
+    XAF,        //  CommunautÔøΩ FinanciÔøΩre Africaine BEAC, Francs
     XAG,        //  Silver, Ounces
     XAU,        //  Gold, Ounces
     XCD,        //  East Caribbean Dollars
     XDR,        //  International Monetary Fund (IMF) Special Drawing Rights
-    XOF,        //  Communauté Financière Africaine BCEAO, Francs
+    XOF,        //  CommunautÔøΩ FinanciÔøΩre Africaine BCEAO, Francs
     XPD,        //  Palladium Ounces
-    XPF,        //  Comptoirs Français du Pacifique Francs
+    XPF,        //  Comptoirs FranÔøΩais du Pacifique Francs
     XPT,        //  Platinum, Ounces
     YER,        //  Yemen, Rials
     ZAR,        //  South Africa, Rand
@@ -192,13 +191,13 @@ public enum Currency {
 
     private static final Map<Currency, String> symbols;
     private static final String dollarSymbol = "\u0024";
-    private static final String poundSymbol = "\u00A3";
+    private static final String poundSymbol = "\u00a3";
 
     static {
         symbols = new HashMap<Currency, String>() {{
             put(Currency.GENERIC, "\u00a4");
             put(Currency.AED, "");
-//            put(Currency.AFN, "");
+            put(Currency.AFN, "\u0402");
             put(Currency.ALL, "Lek");
 //            put(Currency.AMD, "");
 //            put(Currency.ANG, "");

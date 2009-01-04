@@ -2,7 +2,6 @@ package org.nexwerk.moola;
 
 import static org.junit.Assert.assertEquals;
 import org.junit.Test;
-import static junit.framework.Assert.assertTrue;
 import static junit.framework.Assert.assertFalse;
 
 /**
@@ -11,16 +10,14 @@ import static junit.framework.Assert.assertFalse;
 public class MoneyTest {
     private static final double DELTA = 1e-8;
     private static final double TWO = 2.0;
-    private static final int TWOHUNDRED = 200;
+    private static final int TWO_HUNDRED = 200;
 
     @Test public void amount() {
-        assertEquals("The amount should equal 2.0",
-                TWO, new Money(TWO, Currency.GBP).amount(), DELTA);
+        assertEquals("The amount should equal 2.0", TWO, new Money(TWO, Currency.GBP).amount(), DELTA);
     }
 
     @Test public void amountAsLong() {
-        assertEquals("The amount should equal 200",
-                TWOHUNDRED, new Money(TWOHUNDRED, Currency.GBP).amount(), DELTA);
+        assertEquals("The amount should equal 200", TWO_HUNDRED, new Money(TWO_HUNDRED, Currency.GBP).amount(), DELTA);
     }
 
     @Test public void add() {
@@ -69,7 +66,7 @@ public class MoneyTest {
 
     @Test public void divideFurther() {
         Money[] division = new Money(1, Currency.GBP).divide(3);
-        
+
         assertEquals("The amount should equal 0.4", new Money(0.34, Currency.GBP), division[0]);
         assertEquals("The amount should equal 0.4", new Money(0.33, Currency.GBP), division[1]);
         assertEquals("The amount should equal 0.4", new Money(0.33, Currency.GBP), division[2]);
@@ -77,40 +74,48 @@ public class MoneyTest {
     }
 
     @Test public void equality() {
-        assertEquals("The money objects should be equal",
-                new Money(1, Currency.EUR), new Money(1, Currency.EUR));
-        assertEquals("The hashcodes should be the same",
-                new Money(1, Currency.EUR).hashCode(), new Money(1, Currency.EUR).hashCode());
-        assertFalse("The two objects should not equal",
-                new Money(1,Currency.EUR).equals(Currency.EUR));
+        assertEquals("The money objects should be equal", new Money(1, Currency.EUR), new Money(1, Currency.EUR));
+        assertEquals("The hashcodes should be the same", new Money(1, Currency.EUR).hashCode(),
+                new Money(1, Currency.EUR).hashCode());
+        assertFalse("The two objects should not equal", new Money(1,Currency.EUR).equals(new Money(2,Currency.EUR)));
     }
 
     @Test public void toStringGeneric() {
-        assertEquals("The system should display \u00a45.0", "\u00a45.0",
-                new Money(5, Currency.GENERIC).toString());
+        assertEquals("The system should display \u00a45.0", "\u00a45.0", new Money(5, Currency.GENERIC).toString());
     }
 
     @Test public void toStringUsdollar() {
-        assertEquals("The system should display \u00242.3", "\u00242.32",
-                new Money(2.32, Currency.USD).toString());
+        assertEquals("The system should display \u00242.3", "\u00242.32", new Money(2.32, Currency.USD).toString());
     }
 
     @Test public void toStringPound() {
-        assertEquals("The system should display \u00a32.3", "\u00a32.32",
-                new Money(2.32, Currency.GBP).toString());
+        assertEquals("The system should display \u00a32.3", "\u00a32.32", new Money(2.32, Currency.GBP).toString());
     }
 
     @Test public void toStringEuro() {
-        assertEquals("The system should display \u20ac10", "\u20ac10.0",
-                new Money(10.00, Currency.EUR).toString());
+        assertEquals("The system should display \u20ac10", "\u20ac10.0", new Money(10.00, Currency.EUR).toString());
     }
 
     @Test public void toStringYen() {
-        assertEquals("The system should display \u00a512", "\u00a512.0",
-                new Money(12, Currency.JPY).toString());
+        assertEquals("The system should display \u00a512", "\u00a512.0", new Money(12, Currency.JPY).toString());
     }
-    
+
     @Test public void notFullySupportedCurrency() {
         assertEquals("The symbol should display NGN", "NGN", Currency.NGN.getSymbol());
+    }
+
+    @Test(timeout = 1000) public void testAddingFiveMillionNumbers() {
+        Money oneDollar = new Money(1, Currency.USD);
+        Money anotherDollar = new Money(1, Currency.USD);
+        for (int i= 0 ; i< 5000000; i++) {
+            oneDollar = oneDollar.add(anotherDollar);
+        }
+    }
+
+    @Test(timeout = 2000) public void testDividingTenThousandNumbers() {
+        Money oneDollar = new Money(1, Currency.USD);
+        for (int i= 1 ; i< 10000; i++) {
+            oneDollar.divide(i);
+        }
     }
 }

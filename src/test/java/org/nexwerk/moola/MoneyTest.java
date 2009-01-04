@@ -85,13 +85,21 @@ public class MoneyTest {
                 new Money(1,Currency.EUR).equals(Currency.EUR));
     }
 
-    @Test public void toStringImplementation() {
+    @Test public void toStringPound() {
         assertEquals("The system should display £2.3", "£2.32",
                 new Money(2.32, Currency.GBP).toString());
+    }
+
+    @Test public void toStringEuro() {
         assertEquals("The system should display Û10", "Û10.0",
                 new Money(10.00, Currency.EUR).toString());
     }
 
+    @Test public void toStringYen() {
+        assertEquals("The system should display ´12", "´12.0",
+                new Money(12, Currency.JPY).toString());
+    }
+    
     @Test public void notFullySupportedCurrency() {
         assertEquals("The symbol should display NGN", "NGN", Currency.NGN.getSymbol());
     }

@@ -2,6 +2,7 @@ package org.nexwerk.moola;
 
 import java.util.Map;
 import java.util.HashMap;
+import java.io.UnsupportedEncodingException;
 
 /**
  * This enumeration represents the available currencies in moola.
@@ -373,7 +374,11 @@ public enum Currency {
 
     public String getSymbol() {
         if(symbols.containsKey(this)) {
-            return symbols.get(this);
+            try {
+                return new String(symbols.get(this).getBytes("UTF-8")).substring(1);
+            } catch (UnsupportedEncodingException e) {
+                return this.toString();
+            }
         } else {
             return this.toString();
         }

@@ -196,7 +196,7 @@ public enum Currency {
 
     static {
         symbols = new HashMap<Currency, String>() {{
-            put(Currency.GENERIC, "\u00A4");
+            put(Currency.GENERIC, "\u00a4");
             put(Currency.AED, "");
 //            put(Currency.AFN, "");
             put(Currency.ALL, "Lek");
@@ -241,7 +241,7 @@ public enum Currency {
             put(Currency.EGP, poundSymbol);
 //            put(Currency.ERN, "");
 //            put(Currency.ETB, "");
-            put(Currency.EUR, "\u0080");
+            put(Currency.EUR, "\u20ac");
             put(Currency.FJD, dollarSymbol);
             put(Currency.FKP, poundSymbol);
             put(Currency.GBP, poundSymbol);
@@ -268,7 +268,7 @@ public enum Currency {
             put(Currency.JEP, dollarSymbol);
             put(Currency.JMD, "J" + dollarSymbol);
 //            put(Currency.JOD, "");
-            put(Currency.JPY, "\u00A5");
+            put(Currency.JPY, "\u00a5");
 //            put(Currency.KES, "");
 //            put(Currency.KGS, "");
 //            put(Currency.KHR, "");
@@ -374,11 +374,7 @@ public enum Currency {
 
     public String getSymbol() {
         if(symbols.containsKey(this)) {
-            try {
-                return new String(symbols.get(this).getBytes("UTF-8")).substring(1);
-            } catch (UnsupportedEncodingException e) {
-                return this.toString();
-            }
+            return new String(symbols.get(this).getBytes());
         } else {
             return this.toString();
         }

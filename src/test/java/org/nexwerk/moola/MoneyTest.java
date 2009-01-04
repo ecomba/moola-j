@@ -85,18 +85,28 @@ public class MoneyTest {
                 new Money(1,Currency.EUR).equals(Currency.EUR));
     }
 
+    @Test public void toStringGeneric() {
+        assertEquals("The system should display \u00a45.0", "\u00a45.0",
+                new Money(5, Currency.GENERIC).toString());
+    }
+
+    @Test public void toStringUsdollar() {
+        assertEquals("The system should display \u00242.3", "\u00242.32",
+                new Money(2.32, Currency.USD).toString());
+    }
+
     @Test public void toStringPound() {
-        assertEquals("The system should display £2.3", "£2.32",
+        assertEquals("The system should display \u00a32.3", "\u00a32.32",
                 new Money(2.32, Currency.GBP).toString());
     }
 
     @Test public void toStringEuro() {
-        assertEquals("The system should display Û10", "Û10.0",
+        assertEquals("The system should display \u20ac10", "\u20ac10.0",
                 new Money(10.00, Currency.EUR).toString());
     }
 
     @Test public void toStringYen() {
-        assertEquals("The system should display ´12", "´12.0",
+        assertEquals("The system should display \u00a512", "\u00a512.0",
                 new Money(12, Currency.JPY).toString());
     }
     

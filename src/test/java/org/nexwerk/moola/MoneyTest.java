@@ -6,6 +6,7 @@ import static junit.framework.Assert.assertFalse;
 
 /**
  * @author Enrique Comba Riepenhausen
+ * @author Nuno Marques
  */
 public class MoneyTest {
     private static final double DELTA = 1e-8;

@@ -6,9 +6,17 @@ import java.math.BigInteger;
  * The money class represents the arithmetic that can be done when dealing with
  * money.
  *
- * The money object is a inmutable value object.
+ * The money object is immutable.
+ *
+ * Division is still a bit slow and it's possible that we need to change the way currencies get printed
+ * due to the way they are used in the world. Some symbols appear on the right hand side while other on
+ * the left, and some others even appear in the middle.
+ *
+ * The factor associated with the currencies also changes some don't have a decimal part while others
+ * have it in the 1000s, others 100s, and others 10s. 
  * 
  * @author Enrique Comba Riepenhausen
+ * @author Nuno Marques
  */
 public class Money {
     private final BigInteger amount;
@@ -68,7 +76,7 @@ public class Money {
 
     private void assertSameCurrencyAs(final Money money) {
 		if (!currency.equals(money.currency)) {
-            throw new AssertionError("Currency mismatch");
+            throw new IllegalArgumentException("Currency mismatch");
         }
 	}
 

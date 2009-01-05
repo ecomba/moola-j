@@ -118,7 +118,7 @@ public class MoneyTest {
         }
     }
 
-    @Test(timeout = 2000) public void testDividingTenThousandNumbers() {
+    @Test(timeout = 4000) public void testDividingTenThousandNumbers() {
         Money oneDollar = new Money(1, Currency.USD);
         for (int i= 1 ; i< 10000; i++) {
             oneDollar.divide(i);

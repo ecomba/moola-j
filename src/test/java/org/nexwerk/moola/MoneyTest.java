@@ -5,6 +5,9 @@ import org.junit.Test;
 import static junit.framework.Assert.assertFalse;
 
 /**
+ *
+ * This test class is testing the currency enum as well, move them to a new place.
+ *
  * @author Enrique Comba Riepenhausen
  * @author Nuno Marques
  */
@@ -30,7 +33,8 @@ public class MoneyTest {
                 new Money(300, Currency.GBP).add(new Money(6.00, Currency.GBP)));
     }
 
-    @Test(expected = AssertionError.class) public void addDifferentCurrencies() {
+    @Test(expected = IllegalArgumentException.class)
+    public void addDifferentCurrencies() {
         assertEquals("The amount should equal 9.0",
                 new Money(306.0, Currency.GBP),
                 new Money(300, Currency.GBP).add(new Money(6.00, Currency.USD)));
@@ -43,7 +47,8 @@ public class MoneyTest {
                 new Money(TWO, Currency.GBP).substract(new Money(1.1, Currency.GBP)));
     }
 
-    @Test(expected = AssertionError.class) public void substractingDifferentCurrencies() {
+    @Test(expected = IllegalArgumentException.class)
+    public void substractingDifferentCurrencies() {
         assertEquals("THe amount should equal 0.9",
                 new Money(0.9, Currency.GBP),
                 new Money(TWO, Currency.GBP).substract(new Money(1.1, Currency.EUR)));
@@ -86,7 +91,7 @@ public class MoneyTest {
     }
 
     @Test public void toStringUsdollar() {
-        assertEquals("The system should display \u00242.3", "\u00242.32", new Money(2.32, Currency.USD).toString());
+        assertEquals("The system should display US\u00242.3", "US\u00242.32", new Money(2.32, Currency.USD).toString());
     }
 
     @Test public void toStringPound() {
@@ -101,8 +106,8 @@ public class MoneyTest {
         assertEquals("The system should display \u00a512", "\u00a512.0", new Money(12, Currency.JPY).toString());
     }
 
-    @Test public void notFullySupportedCurrency() {
-        assertEquals("The symbol should display NGN", "NGN", Currency.NGN.getSymbol());
+    @Test public void getTheNameInstead() {
+        assertEquals("The symbol should display NGN", "NGN", Currency.NGN.name());
     }
 
     @Test(timeout = 1000) public void testAddingFiveMillionNumbers() {

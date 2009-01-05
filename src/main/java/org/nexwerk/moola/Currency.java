@@ -27,16 +27,16 @@ public enum Currency {
     BIF("FBu"),                 //  Burundi, Francs
     BMD("Bs\u0024"),            //  Bermuda, Dollars
     BND("B\u0024"),             //  Brunei Darussalam, Dollars
-    BOB("Bs"),                  //  Bolivia, Bolivianos
+    BOB("Bs."),                 //  Bolivia, Bolivianos
     BRL("R\u0024"),             //  Brazil, Brazil Real
     BSD("B\u0024"),             //  Bahamas, Dollars
     BTN("Nu."),                 //  Bhutan, Ngultrum
     BWP("P"),                   //  Botswana, Pulas
-    BYR("p."),                  //  Belarus, Rubles
+    BYR("Br"),                  //  Belarus, Rubles
     BZD("BZ\u0024"),            //  Belize, Dollars
     CAD("Can\u0024"),           //  Canada, Dollars
     CDF("F"),                   //  Congo/Kinshasa, Congolese Francs
-    CHF("CHF"),                 //  Switzerland, Francs
+    CHF("Fr."),                 //  Switzerland, Francs
     CLP("Ch\u0024"),            //  Chile, Pesos
     CNY("\u5143"),              //  China, Yuan Renminbi
     COP("\u20b1"),              //  Colombia, Pesos
@@ -54,7 +54,7 @@ public enum Currency {
     ERN("Nfk"),                 //  Eritrea, Nakfa
     ETB("Br"),                  //  Ethiopia, Birr
     EUR("\u20ac"),              //  Euro Member Countries, Euro
-    FJD("F\u0024"),             //  Fiji, Dollars
+    FJD("FJ\u0024"),            //  Fiji, Dollars
     FKP("\u00a3"),              //  Falkland Islands (Malvinas), Pounds
     GBP("\u00a3"),              //  United Kingdom, Pounds
     GEL("\u10e6"),              //  Georgia, Lari
@@ -64,7 +64,7 @@ public enum Currency {
     GMD("D"),                   //  Gambia, Dalasi
     GNF("FG"),                  //  Guinea, Francs
     GTQ("Q"),                   //  Guatemala, Quetzales
-    GYD("G\u0024"),             //  Guyana, Dollars
+    GYD("GY\u0024"),            //  Guyana, Dollars
     HKD("HK\u0024"),            //  Hong Kong, Dollars
     HNL("L"),                   //  Honduras, Lempiras
     HRK("kn"),                  //  Croatia, Kuna
@@ -88,19 +88,19 @@ public enum Currency {
     KPW("\u20a9"),              //  Korea (North), Won
     KRW("\u20a9"),              //  Korea (South), Won
     KWD("\u0631.\u0643"),       //  Kuwait, Dinars
-    KYD("CI\u0024"),            //  Cayman Islands, Dollars
+    KYD("KY\u0024"),            //  Cayman Islands, Dollars
     KZT("\u3012"),              //  Kazakhstan, Tenge
     LAK("\u20ad"),              //  Laos, Kips
     LBP("\u0644.\u0644"),       //  Lebanon, Pounds
     LKR("\u20a8"),              //  Sri Lanka, Rupees
     LRD("L\u0024"),             //  Liberia, Dollars
-    LSL("L"),                   //  Lesotho, Maloti
+    LSL("M"),                   //  Lesotho, Maloti
     LTL("Lt"),                  //  Lithuania, Litai
     LVL("Ls"),                  //  Latvia, Lati
     LYD("\u0644.\u0631"),       //  Libya, Dinars
     MAD(".\u0631.\u0645"),      //  Morocco, Dirhams
     MDL("L"),                   //  Moldova, Lei
-    MGA("MGA"),                 //  Madagascar, Ariary
+    MGA("FMG"),                 //  Madagascar, Ariary
     MKD("\u0434\u0435\u043d"),  //  Macedonia, Denars
     MMK("K"),                   //  Myanmar (Burma), Kyats
     MNT("\u20ae"),              //  Mongolia, Tugriks
@@ -117,13 +117,13 @@ public enum Currency {
     NGN("\u20a6"),              //  Nigeria, Nairas
     NIO("C\u0024"),             //  Nicaragua, Cordobas
     NOK("kr"),                  //  Norway, Krone
-    NPR("\u20a8"),              //  Nepal, Nepal Rupees
+    NPR("N\u20a8"),             //  Nepal, Nepal Rupees
     NZD("NZ\u0024"),            //  New Zealand, Dollars
     OMR(".\u0631.\u0639"),      //  Oman, Rials
     PAB("B/."),                 //  Panama, Balboa
     PEN("S/."),                 //  Peru, Nuevos Soles
     PGK("K"),                   //  Papua New Guinea, Kina
-    PHP("Php"),                 //  Philippines, Pesos
+    PHP("\u20b1"),              //  Philippines, Pesos
     PKR("\u20a8"),              //  Pakistan, Rupees
     PLN("z\u0142"),             //  Poland, Zlotych
     PYG("\u20b2"),              //  Paraguay, Guarani
@@ -133,8 +133,8 @@ public enum Currency {
     RUB("\u0440\u0443\u0431"),  //  Russia, Rubles
     RWF("RF"),                  //  Rwanda, Rwanda Francs
     SAR("\u0631.\u0633"),       //  Saudi Arabia, Riyals
-    SBD("Sl\u0024"),            //  Solomon Islands, Dollars
-    SCR("\u20a8"),              //  Seychelles, Rupees
+    SBD("SI\u0024"),            //  Solomon Islands, Dollars
+    SCR("S\u20a8"),             //  Seychelles, Rupees
     SDG("\u00a3"),              //  Sudan, Pounds
     SEK("kr"),                  //  Sweden, Kronor
     SGD("S\u0024"),             //  Singapore, Dollars
@@ -147,17 +147,17 @@ public enum Currency {
     STD("Db"),                  //  Sao Tome and Principe, Dobras
     SVC("\u20a1"),              //  El Salvador, Colones
     SYP("\u0644.\u0633"),       //  Syria, Pounds
-    SZL("L"),                   //  Swaziland, Emalangeni
+    SZL("E"),                   //  Swaziland, Emalangeni
     THB("\u0e3f"),              //  Thailand, Baht
     TJS("SM"),                  //  Tajikistan, Somoni
     TMM("m"),                   //  Turkmenistan, Manats
     TND("\u062f.\u062a"),       //  Tunisia, Dinars
     TOP("T\u0024"),             //  Tonga, Pa'anga
-    TRY("TL"),                  //  Turkey, New Lira
+    TRY("YTL"),                 //  Turkey, New Lira
     TTD("TT\u0024"),            //  Trinidad and Tobago, Dollars
     TVD("TV\u0024"),            //  Tuvalu, Tuvalu Dollars
     TWD("NT\u0024"),            //  Taiwan, New Dollars
-    TZS("TSh"),                 //  Tanzania, Shillings -- this currency used the symbol in the middle like 10/5, 10/= or -/5
+    TZS("TSh"),                 //  Tanzania, Shillings
     UAH("\u20b4"),              //  Ukraine, Hryvnia
     UGX("USh"),                 //  Uganda, Shillings
     USD("US\u0024"),            //  United States of America, Dollars
@@ -172,7 +172,7 @@ public enum Currency {
     XAG("Ag Oz"),               //  Silver, Ounces
     XAU("Au Oz"),               //  Gold, Ounces
     XCD("EC\u0024"),            //  East Caribbean Dollars
-    XDR(GENERIC.symbol),        //  International Monetary Fund (IMF) Special Drawing Rights
+    XDR("SDR"),                 //  International Monetary Fund (IMF) Special Drawing Rights
     XOF("CFA"),                 //  Communaute Financiare Africaine BCEAO, Francs
     XPD("Pd Oz"),               //  Palladium Ounces
     XPF("CFPF"),                //  Comptoirs Francais du Pacifique Francs

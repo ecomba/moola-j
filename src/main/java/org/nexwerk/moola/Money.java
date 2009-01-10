@@ -8,10 +8,8 @@ import java.math.BigInteger;
  *
  * The money object is immutable.
  *
- * TODO:
- *
- * Division is still a bit slow and it's possible that we need to change the
- * way currencies get printed due to the way they are used in the world.
+ * TODO: Division is still a bit slow and it's possible that we need to change 
+ * the way currencies get printed due to the way they are used in the world.
  * Some symbols appear on the right hand side while other on the left,
  * and some others even appear in the middle.
  *

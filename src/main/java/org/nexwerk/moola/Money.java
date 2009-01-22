@@ -1,8 +1,9 @@
  package org.nexwerk.moola;
 
 import java.math.BigInteger;
+import java.io.Serializable;
 
-/**
+ /**
  * The money class represents the arithmetic that can be done when dealing with
  * money.
  *
@@ -19,12 +20,13 @@ import java.math.BigInteger;
  * @author Enrique Comba Riepenhausen
  * @author Nuno Marques
  */
-public class Money {
-    private final BigInteger amount;
-    private final Currency currency;
-    private final int FACTOR = 100;
+public class Money implements Serializable {
+     private static final long serialVersionUID = 1751281288212199529L;
+     private final BigInteger amount;
+     private final Currency currency;
+     private final int FACTOR = 100;
 
-    public Money(final double amount, final Currency currency) {
+     public Money(final double amount, final Currency currency) {
         this.amount = BigInteger.valueOf(Math.round(amount * FACTOR));
         this.currency = currency;
     }

@@ -94,4 +94,8 @@ public class Money implements Serializable {
     @Override public int hashCode() {
         return amount.hashCode();
     }
-}
+
+    public Currency currency() {
+        return currency;
+    }
+ }
